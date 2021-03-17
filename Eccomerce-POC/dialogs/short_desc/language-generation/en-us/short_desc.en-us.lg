@@ -1,0 +1,20 @@
+[import](common.lg)
+
+# TextInput_Prompt_5OvfXa()
+-Please enter a short description regarding your issue
+# TextInput_InvalidPrompt_5OvfXa()
+- Please enter desc
+# SendActivity_cubHVX()
+[ThumbnailCard
+    title = Registration Unsuccessful!
+    subtitle = We couldn't register your complaint   
+    text =  Please try again later
+    image = https://raw.githubusercontent.com/dpmanek/images/main/unsuccessful.jpg
+]
+# SendActivity_MGHlgh()
+[ThumbnailCard
+    title = Registration Successful!
+    subtitle = Your complaint has been registered successfully  
+    text =  Complaint Number: ${dialog.result.content.number}
+    image = https://raw.githubusercontent.com/dpmanek/images/main/successful.jpg
+]

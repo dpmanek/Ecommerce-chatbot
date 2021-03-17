@@ -1,0 +1,12 @@
+[import](common.lg)
+
+# TextInput_Prompt_yoYQGT()
+ [Activity
+Text =What would you like to do? 
+SuggestedActions = Order Tracking | Order Cancellation
+]
+# TextInput_InvalidPrompt_yoYQGT()
+ [Activity
+Text =Sorry! Please choose from below
+SuggestedActions = Order Tracking | Order Cancellation
+]

@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_collect_phonenumber",
+  "recognizers": {
+    "en-us": "collect_phonenumber.en-us.lu",
+    "": "collect_phonenumber.en-us.lu"
+  }
+}

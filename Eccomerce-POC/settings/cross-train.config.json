@@ -1,0 +1,106 @@
+{
+  "Eccomerce-POC.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "Default_Welcome_Intent": [
+        "home.en-us"
+      ],
+      "": [
+        "home.en-us"
+      ]
+    }
+  },
+  "anything_else.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "home.en-us",
+        "no_of_tries.en-us"
+      ]
+    }
+  },
+  "collect_category.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "short_desc.en-us"
+      ]
+    }
+  },
+  "collect_phonenumber.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "collect_category.en-us",
+        "no_of_tries.en-us"
+      ]
+    }
+  },
+  "complaint_management.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "register_complaint.en-us",
+        "track_complaint.en-us",
+        "no_of_tries.en-us"
+      ]
+    }
+  },
+  "home.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "order_management.en-us",
+        "complaint_management.en-us",
+        "FAQ.en-us",
+        "no_of_tries.en-us"
+      ]
+    }
+  },
+  "order_cancellation.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "anything_else.en-us",
+        "no_of_tries.en-us"
+      ]
+    }
+  },
+  "order_management.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "order_tracking.en-us",
+        "order_cancellation.en-us",
+        "no_of_tries.en-us"
+      ]
+    }
+  },
+  "order_tracking.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "no_of_tries.en-us",
+        "anything_else.en-us"
+      ]
+    }
+  },
+  "register_complaint.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "collect_phonenumber.en-us",
+        "no_of_tries.en-us"
+      ]
+    }
+  },
+  "track_complaint.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "no_of_tries.en-us",
+        "anything_else.en-us"
+      ]
+    }
+  }
+}

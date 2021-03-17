@@ -1,0 +1,12 @@
+[import](common.lg)
+
+# TextInput_Prompt_z2wopB()
+ [Activity
+Text =I can help you with the following  :
+SuggestedActions = Order Management | Complaint Management | FAQ
+] 
+# TextInput_InvalidPrompt_z2wopB()
+ [Activity
+Text =Sorry, I can only help you with the following  :
+SuggestedActions = Order Management | Complaint Management | FAQ
+] 

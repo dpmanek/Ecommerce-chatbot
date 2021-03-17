@@ -1,0 +1,85 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "WwXm2I",
+    "name": "register_complaint",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "eCcNUy"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "6e8hdo"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_6e8hdo()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_6e8hdo()}",
+          "defaultValueResponse": "",
+          "property": "user.name",
+          "validations": [
+            "@personName!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "fCi7HJ"
+          },
+          "property": "user.name",
+          "value": "=@personName"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "XuoMjN"
+          },
+          "condition": "user.name!=null",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "oAFMNd"
+              },
+              "activityProcessed": true,
+              "dialog": "collect_phonenumber"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "g5T5zs"
+              },
+              "property": "user.name"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "WwKSSt"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "register_complaint.lg",
+  "recognizer": "register_complaint.lu.qna",
+  "id": "register_complaint"
+}

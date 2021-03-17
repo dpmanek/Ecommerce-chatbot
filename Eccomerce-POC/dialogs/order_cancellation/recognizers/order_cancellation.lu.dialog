@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_order_cancellation",
+  "recognizers": {
+    "en-us": "order_cancellation.en-us.lu",
+    "": "order_cancellation.en-us.lu"
+  }
+}

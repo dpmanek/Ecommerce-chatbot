@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_track_complaint",
+  "recognizers": {
+    "en-us": "track_complaint.en-us.lu",
+    "": "track_complaint.en-us.lu"
+  }
+}

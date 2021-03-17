@@ -1,0 +1,18 @@
+[import](common.lg)
+
+# TextInput_Prompt_qofOat()
+- Please enter your complaint number.
+# TextInput_InvalidPrompt_qofOat()
+- Please enter a valid complaint_no
+# SendActivity_kjioBH()
+[ThumbnailCard
+    title = Complaint Number: ${user.complaint_no}
+    subtitle = It has been assigned to level: ${dialog.result.content.priority} 
+    text = This issue will be resolved within next 24 hours
+] 
+# SendActivity_5jAsSq()
+[ThumbnailCard
+    title = Complaint Number: ${user.complaint_no}
+    subtitle = undefined 
+    text = Sorry, I couldn't find any complaint with this complaint number.
+]

@@ -1,0 +1,12 @@
+[import](common.lg)
+
+# TextInput_Prompt_Xp9SZq()
+[Activity
+Text =What would you like to do? 
+SuggestedActions = Register Complaint | Track Complaint 
+]
+# TextInput_InvalidPrompt_Xp9SZq()
+ [Activity
+Text = Please choose from the below options :
+SuggestedActions = Register Complaint | Track Complaint 
+]

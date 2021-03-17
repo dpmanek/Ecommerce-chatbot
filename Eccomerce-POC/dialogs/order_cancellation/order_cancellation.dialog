@@ -1,0 +1,167 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "lqp4UO",
+    "name": "order_cancellation",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "xNc46z"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "5t8fpV"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_5t8fpV()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_5t8fpV()}",
+          "defaultValueResponse": "",
+          "validations": [
+            "@order_id1!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "UzW570"
+          },
+          "property": "user.order_id1",
+          "value": "=@order_id1"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "724nDz"
+          },
+          "condition": "user.order_id1!=null",
+          "actions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "zkXYUU"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_zkXYUU()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "user.reason"
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "UFxkJp"
+              },
+              "method": "POST",
+              "resultProperty": "dialog.result",
+              "contentType": "application/json",
+              "responseType": "json",
+              "body": {
+                "order_id": "${user.order_id1}",
+                "reason": "${user.reason}"
+              },
+              "url": "https://c43bfcb7df56.ngrok.io/OrderCancellation"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "1SRRpe"
+              },
+              "actions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "cYYHid"
+                  },
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "1lWnNM"
+                      },
+                      "activity": "${SendActivity_1lWnNM()}"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "uRZV8Z"
+                      },
+                      "activity": "${SendActivity_uRZV8Z()}"
+                    }
+                  ],
+                  "condition": "dialog.result.content.isNotAllowed==true"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "rSbF0Z"
+                  },
+                  "activity": "${SendActivity_rSbF0Z()}"
+                }
+              ],
+              "condition": "dialog.result.content.response==true"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperties",
+              "$designer": {
+                "id": "nSz4Vr"
+              },
+              "properties": [
+                "user.order_id1",
+                "user.reason"
+              ]
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "EpJuvS"
+              },
+              "activityProcessed": true,
+              "dialog": "anything_else"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "gZDgat"
+              },
+              "property": "user.order_id1"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "azOXvf"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "order_cancellation.lg",
+  "recognizer": "order_cancellation.lu.qna",
+  "id": "order_cancellation"
+}

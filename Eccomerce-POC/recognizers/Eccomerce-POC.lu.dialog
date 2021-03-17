@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Eccomerce-POC",
+  "recognizers": {
+    "en-us": "Eccomerce-POC.en-us.lu",
+    "": "Eccomerce-POC.en-us.lu"
+  }
+}

@@ -1,0 +1,18 @@
+[import](common.lg)
+
+# TextInput_Prompt_bMap80()
+[Activity
+Text =Is there anything else I can help you with?
+SuggestedActions = Yes | No
+]
+# SendActivity_e319xQ()
+- It was great assisting you😊. I hope I was helpful 👋
+# TextInput_InvalidPrompt_bMap80()
+ [Activity
+Text =Sorry,😢 I didn'tget you.Please choose from below :
+SuggestedActions = Yes | No
+]
+# SendActivity_1CDfYJ()
+ [AnimationCard
+    media = https://raw.githubusercontent.com/dpmanek/images/main/Thankyou.gif
+]

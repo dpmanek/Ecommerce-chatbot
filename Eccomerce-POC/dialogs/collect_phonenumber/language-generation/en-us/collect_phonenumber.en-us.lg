@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# NumberInput_Prompt_ZZ71pi()
+- Please enter your phone number
+# NumberInput_InvalidPrompt_ZZ71pi()
+- Please enter valid phone number

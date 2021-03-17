@@ -1,0 +1,18 @@
+
+
+
+# TextInput_Response_bMap80
+- ${@ae}
+- I select ${@ae}
+ 
+@ list ae=
+    -Yes:
+        -  yes
+        -     yaa
+        -    sure
+        - yeah
+        -ya
+    -No:
+        -   nope
+        -    nah
+     

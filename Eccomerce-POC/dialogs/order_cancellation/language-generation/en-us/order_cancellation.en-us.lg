@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# TextInput_Prompt_5t8fpV()
+- Please enter your order ID
+# TextInput_InvalidPrompt_5t8fpV()
+- Please enter valid 5 digit order id
+# TextInput_Prompt_zkXYUU()
+- Please enter reason for cancellation
+# SendActivity_rSbF0Z()
+[ThumbnailCard
+    title = OrderId: ${user.order_id1}
+    subtitle = undefined
+    text = Your order id doesn't exist.
+]
+
+
+# SendActivity_1lWnNM()
+[ThumbnailCard
+    title = OrderId: ${user.order_id1}
+    subtitle = Cancelled
+    text = Your order has been cancelled.
+     image = ${dialog.result.content.product_image}
+]
+# SendActivity_uRZV8Z()
+[ThumbnailCard
+    title = OrderId: ${user.order_id1}
+    subtitle = ${dialog.result.content.status}
+    text = Your order can't be cancelled as it is already ${dialog.result.content.status}.
+    image = ${dialog.result.content.product_image}
+] 

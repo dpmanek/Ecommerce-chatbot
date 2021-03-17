@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_order_tracking",
+  "recognizers": {
+    "en-us": "order_tracking.en-us.lu",
+    "": "order_tracking.en-us.lu"
+  }
+}

@@ -1,0 +1,38 @@
+
+> LUIS application information
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 3.2.0
+
+
+> # Intent definitions
+
+# TextInput_Response_Xp9SZq
+- ${@userchoice2}
+- I want to ${@userchoice2}
+- I want to do ${@userchoice2}
+
+
+> # Entity definitions
+
+
+> # PREBUILT Entity definitions
+
+
+> # Phrase list definitions
+
+
+> # List entities
+
+@ list userchoice2 = 
+	- Register Complaint :
+		- register
+		- register my complaint
+	- Track Complaint :
+		- track
+		- track my Complaint
+
+
+> # RegEx entities
+
+

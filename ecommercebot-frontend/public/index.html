@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    $('.open').hide();
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    event.preventDefault();
+    $('.open').show();
+  }
+</script>
+
+<!-- Azure bot -->
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Button used to open the chat form - fixed at the bottom of the page */
+  .open-button {
+    /* background-color: #555; */
+    /* color: white; */
+    /* padding: 16px 20px; */
+    border: none;
+    
+    cursor: pointer;
+    /* opacity: 0.8; */
+    position: fixed;
+    bottom: 23px;
+    left: 50px;
+    width: 107px;
+    float: left;
+  }
+
+  .iframe {
+    /* padding-bottom: 82px; */
+
+    border-radius: 25px solid;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bot-logo {
+    height: 2rem;
+    background-color: #42A5F5;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 3px;
+
+  }
+
+  .bot-logo p {
+    margin-left: 20px;
+    color: white;
+    padding-top: 15px;
+    font-size: 20px;
+
+  }
+
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50px;
+    float: left;
+    /* border: 3px solid #f1f1f1; */
+    z-index: 500;
+    width: 400px;
+    height: 18rem;
+    border-radius: 25px;
+    margin-bottom: 490px;
+    margin-top: 5px;
+    
+    }
+
+  /* Add styles to the form container */
+  .form-container {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px #888888;
+
+  }
+
+
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 23px;
+    left: 50px;
+    float: left;
+    width: 107px;
+    
+  }
+
+  
+  .form-container .btn:hover,
+  .open-button:hover {
+    opacity: 1;
+  }
+  
+/* f5f5f5 */
+  .df-chat-icon {  
+    border-radius: 25px !important;
+  }
+
+.button-modification-open{
+  background: #42A5F5;
+  
+    border: none;
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 24%) 1px 4px 15px 0px;
+    cursor: pointer;
+    height: 56px;
+    position: absolute;
+    width: 56px;
+    left: 3rem;
+    bottom: 2rem;
+}
+
+ .az-chat-icon {
+    height: 36px;
+    left: 10px;
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    transition: opacity 0.5s;
+    width: 36px;
+  
+}
+
+.button-modification-close{
+  background: #42A5F5;
+    border: none;
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 24%) 1px 4px 15px 0px;
+    cursor: pointer;
+    height: 56px;
+    position: absolute;
+    width: 56px;
+    bottom: -47rem;
+    left: -2rem;
+   
+}
+
+
+</style>
+
+  
+<!-- Azure bot ends here -->
+</head>
+  <body>
+    <div class="chat-popup" id="myForm">
+      <div class="bot-logo">
+        <p> Norma (Azure Bot) </p>
+      </div>
+      <form class="form-container">
+        <div class="iframe">
+          <iframe
+            src='https://webchat.botframework.com/embed/Norma?s=puVUPpWM7Yg.0UeimCtEaCsovY7vGpRR0Le64scfB8AsgNuVQ0hjX9o'
+            style='width: 100% !important; display: b;
+         ; padding: 10px; min-height: 500px;border: none;'></iframe>
+        </div>
+        <!-- 
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+        <div class="button-modification-close" onclick="closeForm()">
+          <input class=" cancel az-chat-icon" type="image" src="https://raw.githubusercontent.com/dpmanek/images/main/botlogo.png"
+          width="36px">
+        </div>
+    
+        <!--  <div onclick="closeForm()">
+           <input  class="btn cancel" type="image" src="https://raw.githubusercontent.com/dpmanek/images/main/azurebot.png" alt="logo" style="float:right" width="48" height="48">
+       
+       </div> -->
+      </form>
+    
+    </div>
+    
+    
+    <div class="open button-modification-open" onclick="openForm()">
+      <!--  <button class="open-button">Chat</button> -->
+      <input class=" open az-chat-icon" type="image" src="https://raw.githubusercontent.com/dpmanek/images/main/botlogo.png"
+        alt="logo"  height='36px'width="36px" >
+    
+    </div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    
+  </body>
+</html>

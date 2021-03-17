@@ -1,0 +1,117 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "biyeXN",
+    "name": "order_management",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "VhGeO4"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "yoYQGT"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_yoYQGT()}",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_yoYQGT()}",
+          "property": "user.choice1",
+          "validations": [
+            "@userchoice1!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "wxXyEi"
+          },
+          "property": "user.choice1",
+          "value": "=@userchoice1"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "xhnYdL"
+          },
+          "condition": "user.choice1",
+          "cases": [
+            {
+              "value": "Order Tracking",
+              "actions": [
+                {
+                  "$kind": "Microsoft.DeleteProperty",
+                  "$designer": {
+                    "id": "uznSo5"
+                  },
+                  "property": "user.choice1"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "Vv0ZDJ"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "order_tracking"
+                }
+              ]
+            },
+            {
+              "value": "Order Cancellation",
+              "actions": [
+                {
+                  "$kind": "Microsoft.DeleteProperty",
+                  "$designer": {
+                    "id": "biRZ9P"
+                  },
+                  "property": "user.choice1"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "BWHWgK"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "order_cancellation"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "j2IDH5"
+              },
+              "property": "user.choice1"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "sYQaEW"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "order_management.lg",
+  "recognizer": "order_management.lu.qna",
+  "id": "order_management"
+}

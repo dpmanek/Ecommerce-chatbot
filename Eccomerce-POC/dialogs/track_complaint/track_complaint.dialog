@@ -1,0 +1,131 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Nyh8d3",
+    "name": "track_complaint",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "RLfmK0"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "qofOat"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_qofOat()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_qofOat()}",
+          "defaultValueResponse": "",
+          "property": "user.complaint_no",
+          "validations": [
+            "@complaint_no!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "ln5W71"
+          },
+          "property": "user.complaint_no",
+          "value": "=@complaint_no"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "tMHR4M"
+          },
+          "condition": "user.complaint_no!=null",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "iTB8ub"
+              },
+              "property": "user.complaint_no"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "T0tHAY"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "vIUIvT"
+              },
+              "method": "POST",
+              "resultProperty": "dialog.result",
+              "contentType": "application/json",
+              "responseType": "json",
+              "url": "https://c43bfcb7df56.ngrok.io/TrackComplaint",
+              "body": {
+                "complaint_no": "${user.complaint_no}"
+              }
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "rW22i4"
+              },
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "kjioBH"
+                  },
+                  "activity": "${SendActivity_kjioBH()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "5jAsSq"
+                  },
+                  "activity": "${SendActivity_5jAsSq()}"
+                }
+              ],
+              "condition": "dialog.result.content.response==true"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "IYq0bV"
+              },
+              "property": "user.complaint_no"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "wxWZ2o"
+              },
+              "activityProcessed": true,
+              "dialog": "anything_else"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "track_complaint.lg",
+  "recognizer": "track_complaint.lu.qna",
+  "id": "track_complaint"
+}

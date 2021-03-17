@@ -1,0 +1,17 @@
+
+# TextInput_Response_yoYQGT
+- ${@userchoice1}
+-I select  ${@userchoice1}
+
+
+@ list userchoice1 =
+    - Order Tracking :
+        - track my order
+        -track order
+        -where is my order
+        - order tracking       
+                     
+    - Order Cancellation:
+	      -cancel my order
+		  -cancel orders
+		  -order cancel 

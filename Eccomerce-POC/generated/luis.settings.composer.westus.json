@@ -1,0 +1,48 @@
+{
+    "luis": {
+        "Eccomerce_POC_en_us_lu": {
+            "appId": "70b2b7ad-c2b7-40fc-b7e7-d7d8fc4de611",
+            "version": "0.1"
+        },
+        "anything_else_en_us_lu": {
+            "appId": "8063f4e6-cbb8-4bc7-b153-84cfbe051b4d",
+            "version": "0.4"
+        },
+        "collect_category_en_us_lu": {
+            "appId": "194fd8a0-9235-49b1-b1e0-95720f4d916f",
+            "version": "0.9"
+        },
+        "collect_phonenumber_en_us_lu": {
+            "appId": "7e553afb-66ef-4c0b-aead-615cd4565fce",
+            "version": "0.6"
+        },
+        "complaint_management_en_us_lu": {
+            "appId": "478f9e8a-c866-4bab-8c35-0dae7aaac755",
+            "version": "0.4"
+        },
+        "order_management_en_us_lu": {
+            "appId": "b75cdf6f-7fe1-40d9-8bf8-97d01f351d0b",
+            "version": "0.3"
+        },
+        "order_cancellation_en_us_lu": {
+            "appId": "cab4f147-b78b-435d-a03c-f79d8a76a704",
+            "version": "0.5"
+        },
+        "home_en_us_lu": {
+            "appId": "dfc08c88-d9a9-4c80-aafc-3f805bd25afe",
+            "version": "0.7"
+        },
+        "track_complaint_en_us_lu": {
+            "appId": "41eac206-4568-4579-b71c-33ee07626621",
+            "version": "0.1"
+        },
+        "register_complaint_en_us_lu": {
+            "appId": "4ac7326a-d627-43c3-b880-751da7b3a76f",
+            "version": "0.3"
+        },
+        "order_tracking_en_us_lu": {
+            "appId": "667cc542-8021-423a-b25d-3dbab2c64d70",
+            "version": "0.5"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# TextInput_Prompt_6e8hdo()
+- Please enter your name
+# TextInput_InvalidPrompt_6e8hdo()
+- Please enter a valid name

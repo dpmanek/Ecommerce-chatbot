@@ -1,0 +1,117 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "7NUBPj",
+    "name": "complaint_management",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "o0cUuK"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "Xp9SZq"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_Xp9SZq()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_Xp9SZq()}",
+          "defaultValueResponse": "",
+          "property": "user.choice2",
+          "validations": [
+            "@userchoice2!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "NfSHeA"
+          },
+          "property": "user.choice2",
+          "value": "=@userchoice2"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "jmBMEp"
+          },
+          "condition": "user.choice2",
+          "cases": [
+            {
+              "value": "Register Complaint",
+              "actions": [
+                {
+                  "$kind": "Microsoft.DeleteProperty",
+                  "$designer": {
+                    "id": "UgCPS6"
+                  },
+                  "property": "user.choice2"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "xtUuAw"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "register_complaint"
+                }
+              ]
+            },
+            {
+              "value": "Track Complaint",
+              "actions": [
+                {
+                  "$kind": "Microsoft.DeleteProperty",
+                  "$designer": {
+                    "id": "FVwVmX"
+                  },
+                  "property": "user.choice2"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "tiWbKR"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "track_complaint"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "bYe8kR"
+              },
+              "property": "user.choice2"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "qOetd1"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "complaint_management.lg",
+  "recognizer": "complaint_management.lu.qna",
+  "id": "complaint_management"
+}

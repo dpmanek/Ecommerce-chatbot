@@ -1,0 +1,39 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "oXzMdE",
+    "name": "no_of_tries",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "B923Vo"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "T2pWav"
+          },
+          "activity": "${SendActivity_T2pWav()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "5NPTCQ"
+          },
+          "activityProcessed": true
+        }
+      ]
+    }
+  ],
+  "generator": "no_of_tries.lg",
+  "recognizer": "no_of_tries.lu.qna",
+  "id": "no_of_tries"
+}

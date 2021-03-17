@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_order_cancellation",
+  "applicationId": "=settings.luis.order_cancellation_en_us_lu.appId",
+  "version": "=settings.luis.order_cancellation_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

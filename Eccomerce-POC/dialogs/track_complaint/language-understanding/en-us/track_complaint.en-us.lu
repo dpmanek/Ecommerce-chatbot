@@ -1,0 +1,10 @@
+
+# TextInput_Response_qofOat
+- my complaint no is {@complaint_no} 
+-{@complaint_no} 
+
+
+ 
+
+
+$complaint_no:/INC[0-9]{7}/

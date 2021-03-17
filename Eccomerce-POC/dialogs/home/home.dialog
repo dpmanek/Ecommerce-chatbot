@@ -1,0 +1,137 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "sDZEV6",
+    "name": "home",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "3QzaAv"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "z2wopB"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_z2wopB()}",
+          "unrecognizedPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.choice",
+          "validations": [
+            "@userchoice!=null"
+          ],
+          "invalidPrompt": "${TextInput_InvalidPrompt_z2wopB()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "XECLFd"
+          },
+          "property": "user.choice",
+          "value": "=@userchoice"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "IYtkF3"
+          },
+          "condition": "user.choice",
+          "cases": [
+            {
+              "value": "Order Management",
+              "actions": [
+                {
+                  "$kind": "Microsoft.DeleteProperty",
+                  "$designer": {
+                    "id": "DD18qY"
+                  },
+                  "property": "user.choice"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "WdJQcU"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "order_management"
+                }
+              ]
+            },
+            {
+              "value": "Complaint Management",
+              "actions": [
+                {
+                  "$kind": "Microsoft.DeleteProperty",
+                  "$designer": {
+                    "id": "gR1fFe"
+                  },
+                  "property": "user.choice"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "Vo2VQs"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "complaint_management"
+                }
+              ]
+            },
+            {
+              "value": "FAQ",
+              "actions": [
+                {
+                  "$kind": "Microsoft.DeleteProperty",
+                  "$designer": {
+                    "id": "kuLOz1"
+                  },
+                  "property": "user.choice"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "PlLUg3"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "FAQ"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "Ub8has"
+              },
+              "property": "user.choice"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "yINmKf"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "home.lg",
+  "recognizer": "home.lu.qna",
+  "id": "home"
+}

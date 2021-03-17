@@ -1,0 +1,105 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "8FyJc6",
+    "name": "short_desc",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "VW0faB"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "5OvfXa"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_5OvfXa()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_5OvfXa()}",
+          "defaultValueResponse": "",
+          "property": "user.short_desc",
+          "validations": [
+            "this.value!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "tnBSDP"
+          },
+          "method": "POST",
+          "url": "https://c43bfcb7df56.ngrok.io/RegisterComplaint",
+          "body": {
+            "name": "${user.name}",
+            "phone_no": "${user.phone_no}",
+            "category": "${user.cat}",
+            "short_desc": "${user.short_desc}"
+          },
+          "resultProperty": "dialog.result",
+          "contentType": "application/json",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "zOQEQW"
+          },
+          "condition": "dialog.result.content.response==true",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "MGHlgh"
+              },
+              "activity": "${SendActivity_MGHlgh()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "cubHVX"
+              },
+              "activity": "${SendActivity_cubHVX()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "hEqJJt"
+          },
+          "properties": [
+            "user.name",
+            "user.phone_no",
+            "user.cat",
+            "user.short_desc"
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "fLo4pK"
+          },
+          "activityProcessed": true,
+          "dialog": "anything_else"
+        }
+      ]
+    }
+  ],
+  "generator": "short_desc.lg",
+  "recognizer": "short_desc.lu.qna",
+  "id": "short_desc"
+}

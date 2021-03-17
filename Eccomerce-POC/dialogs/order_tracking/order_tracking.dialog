@@ -1,0 +1,162 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ntE0f6",
+    "name": "order_tracking",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "l7eJ9l"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "Pysrso"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_Pysrso()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${NumberInput_InvalidPrompt_Pysrso()}",
+          "defaultValueResponse": "",
+          "validations": [
+            "@order_id!=null"
+          ],
+          "property": "user.order_id"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "K4smIZ"
+          },
+          "property": "user.order_id",
+          "value": "=@order_id"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "meyXw5"
+          },
+          "condition": "user.order_id!=null",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "xZS2Rc"
+              },
+              "property": "user.order_id"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "GDVVen"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "HRky6S"
+              },
+              "method": "POST",
+              "resultProperty": "dialog.result",
+              "contentType": "application/json",
+              "responseType": "json",
+              "url": "https://c43bfcb7df56.ngrok.io/getTrackingStatus",
+              "body": "{\"order_id\":\"${user.order_id}\"}"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "j52q31"
+              },
+              "actions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "7PmC4X"
+                  },
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "UEBlW9"
+                      },
+                      "activity": "${SendActivity_UEBlW9()}"
+                    },
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "tcFpNc"
+                      },
+                      "activity": "${SendActivity_tcFpNc()}"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "fJ1L0W"
+                      },
+                      "activity": "${SendActivity_fJ1L0W()}"
+                    },
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "yXD5ZM"
+                      },
+                      "activity": "${SendActivity_yXD5ZM()}"
+                    }
+                  ],
+                  "condition": "dialog.result.content.status== 'out for delivery'"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "6RUsw3"
+                  },
+                  "activity": "${SendActivity_6RUsw3()}"
+                }
+              ],
+              "condition": "dialog.result.content.response==true"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "0RlrDv"
+              },
+              "property": "user.order_id"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "fQ3eDm"
+              },
+              "activityProcessed": true,
+              "dialog": "anything_else"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "order_tracking.lg",
+  "recognizer": "order_tracking.lu.qna",
+  "id": "order_tracking"
+}

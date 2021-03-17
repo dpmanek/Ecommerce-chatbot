@@ -1,0 +1,144 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "b5aIWI",
+    "name": "anything_else",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "y59Ogs"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "bMap80"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_bMap80()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_bMap80()}",
+          "defaultValueResponse": "",
+          "property": "user.anything",
+          "validations": [
+            "this.value!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "QpppiO"
+          },
+          "property": "user.anything",
+          "value": "=@ae"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "kmmlQd"
+          },
+          "condition": "user.anything",
+          "cases": [
+            {
+              "value": "Yes",
+              "actions": [
+                {
+                  "$kind": "Microsoft.DeleteProperties",
+                  "$designer": {
+                    "id": "x7WTMa"
+                  },
+                  "properties": [
+                    "user.choice",
+                    "user.choice1",
+                    "user.phone_no",
+                    "user.order_id1",
+                    "user.order_id",
+                    "user.complaint_no",
+                    "user.name",
+                    "user.short_desc",
+                    "user.cat",
+                    "user.choice2",
+                    "user.anything",
+                    "user.reason",
+                    "user.faq"
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "mgUSNf"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "home"
+                }
+              ]
+            },
+            {
+              "value": "No",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "1CDfYJ"
+                  },
+                  "activity": "${SendActivity_1CDfYJ()}"
+                },
+                {
+                  "$kind": "Microsoft.DeleteProperties",
+                  "$designer": {
+                    "id": "JjlgWY"
+                  },
+                  "properties": [
+                    "user.choice",
+                    "user.choice1",
+                    "user.phone_no",
+                    "user.order_id1",
+                    "user.order_id",
+                    "user.name",
+                    "user.choice2",
+                    "user.complaint_no",
+                    "user.short_desc",
+                    "user.cat",
+                    "user.anything",
+                    "user.reason",
+                    "user.faq"
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "e319xQ"
+                  },
+                  "activity": "${SendActivity_e319xQ()}"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "cqvcqp"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "anything_else.lg",
+  "recognizer": "anything_else.lu.qna",
+  "id": "anything_else"
+}

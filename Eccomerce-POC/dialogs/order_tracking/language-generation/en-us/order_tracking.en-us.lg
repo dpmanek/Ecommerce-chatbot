@@ -1,0 +1,46 @@
+[import](common.lg)
+
+# NumberInput_Prompt_Pysrso()
+- Please enter your order ID
+# NumberInput_InvalidPrompt_Pysrso()
+- Please enter a 5-digit order id
+# SendActivity_6RUsw3()
+[ThumbnailCard
+    title = OrderId: ${user.order_id}
+    subtitle = Undefined
+    text = Order id does not exist.
+    image = https://example.com/demo.jpg
+]
+
+
+# SendActivity_tcFpNc()
+[HeroCard
+    title = Agent Details
+    text = Agent name: ${dialog.result.content.agent_name}\n\n Agent number: ${dialog.result.content.agent_contact} \n\n Product name: ${dialog.result.content.product_name} 
+    image = ${dialog.result.content.status_image}
+    
+]
+
+
+# SendActivity_fJ1L0W()
+[HeroCard
+    title = OrderId: ${user.order_id}
+    subtitle = Status: ${dialog.result.content.status}
+    text = Your order is ${dialog.result.content.status} \n\n Product name: ${dialog.result.content.product_name}
+    image = ${dialog.result.content.product_image}
+]
+
+
+# SendActivity_UEBlW9()
+ [Herocard
+    title = OrderId : ${user.order_id}
+    subtitle = Status : Out for delivery
+    text=Your order will reach you by 9pm
+    images=${dialog.result.content.product_image}
+    ]
+# SendActivity_yXD5ZM()
+[HeroCard
+    title = Order Status
+    image = ${dialog.result.content.status_image}
+]
+

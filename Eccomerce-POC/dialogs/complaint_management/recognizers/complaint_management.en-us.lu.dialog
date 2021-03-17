@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_complaint_management",
+  "applicationId": "=settings.luis.complaint_management_en_us_lu.appId",
+  "version": "=settings.luis.complaint_management_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

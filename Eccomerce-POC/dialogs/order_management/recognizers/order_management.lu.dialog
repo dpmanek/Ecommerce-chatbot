@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_order_management",
+  "recognizers": {
+    "en-us": "order_management.en-us.lu",
+    "": "order_management.en-us.lu"
+  }
+}

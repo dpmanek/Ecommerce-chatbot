@@ -1,0 +1,19 @@
+{
+  "profileName": "Ecommercebot",
+  "jobId": "b31ff6bb-5d20-4f97-a844-88b59b2dad93",
+  "projectId": "9402.004629573214",
+  "time": "2021-03-09T08:39:25.994Z",
+  "log": [
+    "Creating Azure resources...",
+    "Checking the Existence of the Resource Group ...",
+    "Creating Resource Group ...",
+    "> Creating App Registration ...",
+    "Start to add password for App, Id : d8a96d6f-0f8f-47b2-9f5f-e5a7380841ad",
+    "> Create App Registration Success! ID: d8a96d6f-0f8f-47b2-9f5f-e5a7380841ad",
+    "Deploying Web App Resource ...",
+    "Deploying Bot Resource ...",
+    "{\"stack\":\"Error: Bot is not valid. Errors: The bot name is already registered to another bot application..  See https://aka.ms/bot-requirements for detailed requirements.\\n    at new t (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:16:37408)\\n    at C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:18:103741\",\"message\":\"Bot is not valid. Errors: The bot name is already registered to another bot application..  See https://aka.ms/bot-requirements for detailed requirements.\",\"code\":\"InvalidBotData\",\"statusCode\":400,\"request\":{\"body\":\"{\\\"location\\\":\\\"global\\\",\\\"sku\\\":{\\\"name\\\":\\\"F0\\\"},\\\"kind\\\":\\\"bot\\\",\\\"properties\\\":{\\\"displayName\\\":\\\"Ecommercebot\\\",\\\"endpoint\\\":\\\"https://ecommercebot.azurewebsites.net/api/messages\\\",\\\"msaAppId\\\":\\\"d8a96d6f-0f8f-47b2-9f5f-e5a7380841ad\\\"}}\"},\"response\":{\"body\":\"{\\\"error\\\":{\\\"code\\\":\\\"InvalidBotData\\\",\\\"message\\\":\\\"Bot is not valid. Errors: The bot name is already registered to another bot application..  See https://aka.ms/bot-requirements for detailed requirements.\\\"}}\"},\"body\":{}}",
+    "{\"name\":\"BOT_REGISTRATION_ERROR\",\"message\":\"Error - Bot is not valid. Errors: The bot name is already registered to another bot application..  See https://aka.ms/bot-requirements for detailed requirements.\",\"stack\":\"Error\\n    at new n (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:18:97996)\\n    at Object.t.createCustomizeError (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:18:98326)\\n    at e.<anonymous> (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:479:33482)\\n    at C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:479:12347\\n    at Object.throw (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:479:12452)\\n    at s (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:479:11217)\"}",
+    "BOT_REGISTRATION_ERROR - Error - Bot is not valid. Errors: The bot name is already registered to another bot application..  See https://aka.ms/bot-requirements for detailed requirements.\n        detail message can see provision.Ecommercebot.log in your bot folder"
+  ]
+}

@@ -1,0 +1,13 @@
+
+# TextInput_Response_5t8fpV
+-{@order_id1}
+-order id is {@order_id1}
+
+$order_id1:/[0-9]{5}/
+
+
+
+# TextInput_Response_zkXYUU
+-expensive
+-not interested
+

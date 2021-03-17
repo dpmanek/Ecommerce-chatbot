@@ -1,0 +1,79 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "RkjjGH",
+    "name": "collect_phonenumber",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "CnDi7M"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "ZZ71pi"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_ZZ71pi()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${NumberInput_InvalidPrompt_ZZ71pi()}",
+          "defaultValueResponse": "",
+          "property": "user.phone_no",
+          "validations": [
+            "@phonenumber!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "1240Y6"
+          },
+          "property": "user.phone_no",
+          "value": "=@phonenumber"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "b6LE11"
+          },
+          "condition": "user.phone_no!=null",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "6zq65j"
+              },
+              "activityProcessed": true,
+              "dialog": "collect_category"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "BwcxN3"
+              },
+              "activityProcessed": true,
+              "dialog": "no_of_tries"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "collect_phonenumber.lg",
+  "recognizer": "collect_phonenumber.lu.qna",
+  "id": "collect_phonenumber"
+}

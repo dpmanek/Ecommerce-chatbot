@@ -1,0 +1,51 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "3Jtie6",
+    "name": "collect_category",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "L0rdVN"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "wrvG0p"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_wrvG0p()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_wrvG0p()}",
+          "defaultValueResponse": "",
+          "property": "user.cat",
+          "validations": [
+            "@category!=null"
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "1sFdg1"
+          },
+          "activityProcessed": true,
+          "dialog": "short_desc"
+        }
+      ]
+    }
+  ],
+  "generator": "collect_category.lg",
+  "recognizer": "collect_category.lu.qna",
+  "id": "collect_category"
+}

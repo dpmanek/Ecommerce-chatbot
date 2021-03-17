@@ -1,0 +1,34 @@
+
+> LUIS application information
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 3.2.0
+
+
+> # Intent definitions
+
+# TextInput_Response_5t8fpV
+- {@order_id1}
+- order id is {@order_id1}
+
+
+# TextInput_Response_zkXYUU
+- expensive
+- not interested
+
+
+> # Entity definitions
+
+
+> # PREBUILT Entity definitions
+
+
+> # Phrase list definitions
+
+
+> # List entities
+
+> # RegEx entities
+
+@ regex order_id1 = /[0-9]{5}/
+

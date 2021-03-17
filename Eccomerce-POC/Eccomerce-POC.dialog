@@ -1,0 +1,81 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "Eccomerce-POC",
+      "description": "",
+      "id": "h9xhsc"
+    }
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "liCYZq"
+          },
+          "activity": "${SendActivity_liCYZq()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "ExXQea",
+        "name": "Default_Welcome_Intent"
+      },
+      "intent": "Default_Welcome_Intent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "0eFBDL"
+          },
+          "activity": "${SendActivity_0eFBDL()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "tEKAUW"
+          },
+          "activityProcessed": true,
+          "dialog": "home"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "xVORKu"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "WsRbNU"
+          },
+          "activity": "${SendActivity_WsRbNU()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "PqHz0n"
+          },
+          "activityProcessed": true,
+          "dialog": "home"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "Eccomerce-POC.lg",
+  "id": "Eccomerce-POC",
+  "recognizer": "Eccomerce-POC.lu.qna"
+}

@@ -1,0 +1,26 @@
+{
+  "profileName": "ecommercebot-poc",
+  "jobId": "10cb3f9f-c5a3-480f-bdbf-d02da572e706",
+  "projectId": "9402.004629573214",
+  "time": "2021-03-10T06:50:21.542Z",
+  "log": [
+    "Creating Azure resources...",
+    "Checking the Existence of the Resource Group ...",
+    "Creating Resource Group ...",
+    "> Creating App Registration ...",
+    "Start to add password for App, Id : 34ba3eee-2be6-429e-8e1e-4c0fe6eb6ebc",
+    "> Create App Registration Success! ID: 34ba3eee-2be6-429e-8e1e-4c0fe6eb6ebc",
+    "Deploying Web App Resource ...",
+    "Deploying Bot Resource ...",
+    "Deploying Application Insights Resource ...",
+    "> Linking Application Insights settings to Bot Service ...",
+    "> AppInsights AppId: 2d5a26f5-faea-4844-98a3-ddb917c33100 ...",
+    "> AppInsights InstrumentationKey: c698625d-10cf-4c19-9390-049cb2849b70 ...",
+    "> AppInsights ApiKey: h0dj8nkcff0b824a8cl7geh6f1j7rx2nme7y8j2i ...",
+    "> Linking Application Insights settings to Bot Service Success!",
+    "Deploying Luis Authoring Resource ...",
+    "{\"stack\":\"Error: Insufficient quota. Cannot create/update/move resource 'ecommercebot-poc-luis-authoring'.\\n    at new t (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:16:37408)\\n    at C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:18:103741\",\"message\":\"Insufficient quota. Cannot create/update/move resource 'ecommercebot-poc-luis-authoring'.\",\"code\":\"InsufficientQuota\",\"statusCode\":400,\"request\":{\"body\":\"{\\\"kind\\\":\\\"LUIS.Authoring\\\",\\\"location\\\":\\\"westus\\\",\\\"sku\\\":{\\\"name\\\":\\\"F0\\\"}}\"},\"response\":{\"body\":\"{\\\"error\\\":{\\\"code\\\":\\\"InsufficientQuota\\\",\\\"message\\\":\\\"Insufficient quota. Cannot create/update/move resource 'ecommercebot-poc-luis-authoring'.\\\"}}\"},\"body\":{}}",
+    "{\"name\":\"CREATE_LUIS_AUTHORING_RESOURCE_ERROR\",\"message\":\"Error - Insufficient quota. Cannot create/update/move resource 'ecommercebot-poc-luis-authoring'.\",\"stack\":\"Error\\n    at new n (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:18:97996)\\n    at Object.t.createCustomizeError (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:18:98326)\\n    at e.<anonymous> (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:479:15777)\\n    at C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:479:12347\\n    at Object.throw (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:479:12452)\\n    at s (C:\\\\Users\\\\deepm\\\\AppData\\\\Local\\\\Programs\\\\Bot Framework Composer\\\\resources\\\\app.asar.unpacked\\\\extensions\\\\azurePublish\\\\lib\\\\node\\\\index.js:479:11217)\"}",
+    "CREATE_LUIS_AUTHORING_RESOURCE_ERROR - Error - Insufficient quota. Cannot create/update/move resource 'ecommercebot-poc-luis-authoring'.\n        detail message can see provision.ecommercebot-poc.log in your bot folder"
+  ]
+}

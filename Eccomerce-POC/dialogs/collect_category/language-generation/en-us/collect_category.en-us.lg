@@ -1,0 +1,12 @@
+[import](common.lg)
+
+# TextInput_Prompt_wrvG0p()
+ [Activity
+Text = Please select a category   :
+SuggestedActions = Delivery issue | Quality issue | Refund issue | Return issue
+] 
+# TextInput_InvalidPrompt_wrvG0p()
+ [Activity
+Text = Sorry, Please select a category   :
+SuggestedActions = Delivery issue | Quality issue | Refund issue | Return issue
+] 

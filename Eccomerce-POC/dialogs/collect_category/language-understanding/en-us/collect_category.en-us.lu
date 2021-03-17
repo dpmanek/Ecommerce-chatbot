@@ -1,0 +1,16 @@
+
+
+
+# TextInput_Response_wrvG0p
+-i choose ${@category}
+
+@ list category =
+	-Delivery issue:
+		-delivery issue
+		-delivery
+	- Quality issue:
+		-quality
+	- Refund issue:
+		-refund
+	- Return issue:
+		- return

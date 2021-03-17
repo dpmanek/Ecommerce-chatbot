@@ -1,0 +1,39 @@
+
+> LUIS application information
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 3.2.0
+
+
+> # Intent definitions
+
+# TextInput_Response_wrvG0p
+- i choose ${@category}
+
+
+> # Entity definitions
+
+
+> # PREBUILT Entity definitions
+
+
+> # Phrase list definitions
+
+
+> # List entities
+
+@ list category = 
+	- Delivery issue :
+		- delivery issue
+		- delivery
+	- Quality issue :
+		- quality
+	- Refund issue :
+		- refund
+	- Return issue :
+		- return
+
+
+> # RegEx entities
+
+
