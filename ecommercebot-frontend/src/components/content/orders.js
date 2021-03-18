@@ -26,7 +26,7 @@ export default class orders extends Component {
       <>
         <p class="h3 well">Orders</p>
 
-        <table class="table table-hover ">
+        <table className="table table-hover ">
           <tr>
             <th>
               <center>OrderId</center>
