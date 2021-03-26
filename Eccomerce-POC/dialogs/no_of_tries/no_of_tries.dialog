@@ -17,6 +17,13 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "1OZh0W"
+          },
+          "property": "user.home"
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "T2pWav"

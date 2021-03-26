@@ -9,7 +9,6 @@
     title = OrderId: ${user.order_id}
     subtitle = Undefined
     text = Order id does not exist.
-    image = https://example.com/demo.jpg
 ]
 
 

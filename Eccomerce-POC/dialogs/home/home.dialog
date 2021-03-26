@@ -127,8 +127,16 @@
               "dialog": "no_of_tries"
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.RepeatDialog",
+          "$designer": {
+            "id": "Re15TF"
+          },
+          "activityProcessed": true
         }
-      ]
+      ],
+      "condition": "user.home==true"
     }
   ],
   "generator": "home.lg",

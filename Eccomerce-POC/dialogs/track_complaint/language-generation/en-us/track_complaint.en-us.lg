@@ -6,10 +6,9 @@
 - Please enter a valid complaint_no
 # SendActivity_kjioBH()
 [ThumbnailCard
-    title = Complaint Number: ${user.complaint_no}
-    subtitle = It has been assigned to level: ${dialog.result.content.priority} 
-    text = This issue will be resolved within next 24 hours
-] 
+ title = Complaint Number: ${user.complaint_no}
+ text = It has been assigned to level: \n\n ${dialog.result.content.priority}\n\nThis issue will be resolved \n\n within next 24 hours
+]
 # SendActivity_5jAsSq()
 [ThumbnailCard
     title = Complaint Number: ${user.complaint_no}

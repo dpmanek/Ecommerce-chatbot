@@ -75,7 +75,7 @@
               "resultProperty": "dialog.result",
               "contentType": "application/json",
               "responseType": "json",
-              "url": "https://508878bfc12c.ngrok.io/TrackComplaint",
+              "url": "https://8106f3f77884.ngrok.io/TrackComplaint",
               "body": {
                 "complaint_no": "${user.complaint_no}"
               }

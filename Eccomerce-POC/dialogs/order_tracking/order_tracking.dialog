@@ -76,7 +76,7 @@
               "resultProperty": "dialog.result",
               "contentType": "application/json",
               "responseType": "json",
-              "url": "https://508878bfc12c.ngrok.io/getTrackingStatus",
+              "url": "https://8106f3f77884.ngrok.io/getTrackingStatus",
               "body": "{\"order_id\":\"${user.order_id}\"}"
             },
             {

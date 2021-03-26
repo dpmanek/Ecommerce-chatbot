@@ -72,14 +72,6 @@
                     "user.reason",
                     "user.faq"
                   ]
-                },
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "mgUSNf"
-                  },
-                  "activityProcessed": true,
-                  "dialog": "home"
                 }
               ]
             },
@@ -111,7 +103,8 @@
                     "user.cat",
                     "user.anything",
                     "user.reason",
-                    "user.faq"
+                    "user.faq",
+                    "user.home"
                   ]
                 },
                 {

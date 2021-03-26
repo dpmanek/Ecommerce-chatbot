@@ -41,6 +41,14 @@
           "activity": "${SendActivity_0eFBDL()}"
         },
         {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "jVsp9a"
+          },
+          "property": "user.home",
+          "value": "=true"
+        },
+        {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
             "id": "tEKAUW"

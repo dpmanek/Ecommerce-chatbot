@@ -40,7 +40,7 @@
             "id": "tnBSDP"
           },
           "method": "POST",
-          "url": "https://508878bfc12c.ngrok.io/RegisterComplaint",
+          "url": "https://8106f3f77884.ngrok.io/RegisterComplaint",
           "body": {
             "name": "${user.name}",
             "phone_no": "${user.phone_no}",
