@@ -14,12 +14,12 @@ export default class orders extends Component {
       .then((res) => this.setState({ arrData: res.data }))
       .catch((err) => console.log(err));
   }
-  componentDidUpdate() {
+   componentDidUpdate() {
     axios
       .post(`${api}getAllOrders`)
       .then((res) => this.setState({ arrData: res.data }))
       .catch((err) => console.log(err));
-  }
+  } 
   render() {
   
     return (

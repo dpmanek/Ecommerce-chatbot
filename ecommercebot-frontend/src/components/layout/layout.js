@@ -15,7 +15,6 @@ class Layout extends Component {
             <df-messenger
               intent="WELCOME"
               chat-title="Norma (Dialogflow Bot)"
-              //chat-icon="https://www.iconninja.com/files/280/963/747/fav-google-new-logo-icon.svg"
               chat-icon="https://raw.githubusercontent.com/dpmanek/images/main/botlogo.png"
               agent-id="1be3da83-4afe-46c5-9fd9-7dad08e96c9c"
               language-code="en"
