@@ -1,5 +1,7 @@
-
-//new 
-//father
-//new branch
-// now this is going to be new changes
+/* git branch <branchname>
+git checkout <branchname> 
+git checkout -b <branchname>
+git checkout -D <branchname>
+git push origin --delete <branchname>
+git merge <branchname>
+ */
